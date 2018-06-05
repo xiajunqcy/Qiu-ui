@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router.config'
-import qui from '../../src/index.js'
+// import qui from '../../src/index.js'
+import qui from '../../lib/qui.js'
+console.log(qui)
 // 完整引用
 // Vue.use(qui)
 // 独立引用
