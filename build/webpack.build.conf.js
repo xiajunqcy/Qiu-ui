@@ -7,9 +7,12 @@ const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 
+baseWebpackConfig.entry = {} 
+baseWebpackConfig.output = {} 
+
 const webpackConfig = merge(baseWebpackConfig, {
 	entry: {
-		'qui': './src/index.js'
+		qui: './src/index.js'
 	},
 	output: {
 		// path: path.resolve(__dirname, '../lib'),

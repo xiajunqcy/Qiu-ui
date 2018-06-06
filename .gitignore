@@ -1,6 +1,8 @@
 .DS_Store
 node_modules/
-/dist/
+/examples/dist/
+examples/dist/index.html
+/lib/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -15,3 +17,4 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+

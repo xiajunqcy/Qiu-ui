@@ -9,9 +9,9 @@ const path = require('path')
 const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')
-const webpackConfig = require('./webpack.build.conf')
+const webpackConfig = require('./webpack.build.ex.conf')
 
-const spinner = ora('building Qui...')
+const spinner = ora('building for example...')
 spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {

@@ -15,35 +15,15 @@ const env = process.env.NODE_ENV === 'testing' ?
 	require('../config/test.env') :
 	require('../config/prod.env')
 
-baseWebpackConfig.entry = {
-	vui: './src/index.js'
-}
-
-baseWebpackConfig.output = {
-	path: path.resolve(__dirname, '../lib'),
-	filename: utils.assetsPath('./lib/[name].js'),
-	library: 'qui',
-	libraryTarget: 'umd',
-	// chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
-}
-
 const webpackConfig = merge(baseWebpackConfig, {
-module: {
+	module: {
 		rules: utils.styleLoaders({
 			sourceMap: config.build.productionSourceMap,
 			extract: true,
 			usePostCSS: true
 		})
 	},
-	devtool: false,
-	externals: {
-		vue: {
-			root: 'Vue',
-			commonjs: 'vue',
-			commonjs2: 'vue',
-			amd: 'vue'
-		}
-	},
+	devtool: false, 
 	plugins: [
 		// http://vuejs.github.io/vue-loader/en/workflow/production.html
 		new webpack.DefinePlugin({
@@ -70,16 +50,14 @@ module: {
 		// Compress extracted CSS. We are using this plugin so that possible
 		// duplicated CSS from different components can be deduped.
 		new OptimizeCSSPlugin({
-			cssProcessorOptions: config.build.productionSourceMap ?
-				{
-					safe: true,
-					map: {
-						inline: false
-					}
-				} :
-				{
-					safe: true
+			cssProcessorOptions: config.build.productionSourceMap ? {
+				safe: true,
+				map: {
+					inline: false
 				}
+			} : {
+				safe: true
+			}
 		}),
 		// generate dist index.html with correct asset hash for caching.
 		// you can customize output by editing /index.html
